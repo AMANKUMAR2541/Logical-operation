@@ -43,31 +43,28 @@ Logic gates are the basic building blocks of any digital system. It is an electr
 ![image](https://user-images.githubusercontent.com/71547910/235332254-db13d222-1246-4b57-bbb2-3ab2287ccaa8.png)
 
 ## PROGRAM:
+int bs0 = 0;         // variable for reading the pushbutton status</br>
+int bs5 = 0;</br>
 void setup() {</br>
-   pinMode(13,OUTPUT);</br>
- Serial.begin(9600);</br>
-
-
+  pinMode(13, OUTPUT);</br>
+  pinMode(0, INPUT);</br>
+  pinMode(5, INPUT);</br>
 }</br>
+void loop() {</br>
 
-void loop() </br>
-{</br>
-  if(Serial.available()>0)</br>
+  bs0 = digitalRead(0);</br>
+  bs5 = digitalRead(5);</br>
+
+  if (bs0&bs5) </br>
   {</br>
-    int num=Serial.read();</br>
-    if(num=='1')</br>
-    {</br>
-      digitalWrite(13,HIGH);</br>
-      Serial.println("LED ON");</br>
-    }</br>
-    if(num=='0')</br>
-    {</br>
-      digitalWrite(13,LOW);</br>
-      Serial.println("LED OFF");</br>
-    }</br>
+      digitalWrite(13, HIGH);</br>
+  } </br>
+  else </br>
+  {</br>
+    
+    digitalWrite(13, LOW);</br>
   }</br>
-  delay(1000);</br>
-}</br>
+ }</br>
 
 ## CIRCUIT DIAGRAM:
 
