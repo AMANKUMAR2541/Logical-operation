@@ -43,28 +43,36 @@ Logic gates are the basic building blocks of any digital system. It is an electr
 ![image](https://user-images.githubusercontent.com/71547910/235332254-db13d222-1246-4b57-bbb2-3ab2287ccaa8.png)
 
 ## PROGRAM:
-int bs0 = 0;         // variable for reading the pushbutton status</br>
-int bs5 = 0;</br>
 void setup() {</br>
-  pinMode(13, OUTPUT);</br>
-  pinMode(0, INPUT);</br>
-  pinMode(5, INPUT);</br>
+   // put your setup code here, to run once:</br>
+   Serial.begin(9600);</br>
+   Serial.println();</br>
+
+   int x1 = 1;</br>
+   int x2 = 2;</br>
+   int x3 = 3;</br>
+   int x4 = 4;</br>
+
+   if((x1 > 2) && (x2 < 2)){</br>
+      Serial.println("x1 is greater than 2 and x2 is less than 2");</br>
+   }
+
+   if((x1 == 2) || (x2 == 2)){
+      Serial.println("Either or both of x1 and x2 are equal to 2");
+   }</br>
+
+   if((x3 > 2) && (x4 > 2)){</br>
+      Serial.println("x3 and x4 are both greater than 2");</br>
+   }</br>
+
+   if((x3 < 2) || (x4 < 2)){</br>
+      Serial.println("Either or both of x3 and x4 are less than 2");</br>
+   }</br>
 }</br>
+
 void loop() {</br>
-
-  bs0 = digitalRead(0);</br>
-  bs5 = digitalRead(5);</br>
-
-  if (bs0&bs5) </br>
-  {</br>
-      digitalWrite(13, HIGH);</br>
-  } </br>
-  else </br>
-  {</br>
-    
-    digitalWrite(13, LOW);</br>
-  }</br>
- }</br>
+   // put your main code here, to run repeatedly:</br>
+}</br>
 
 ## CIRCUIT DIAGRAM:
 
